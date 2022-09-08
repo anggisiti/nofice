@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>data keluarga</title>
+    <style>
+        table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+    
+</head> 
+<body>
+    <div>
+        <h1> ini data keluarga </h1>
+        <form action="" method="post">
+            <label for="">nama</label>
+            <input name="nama" type="text" required>
+            <input name="umur" type="text" required>
+            <label for="">umur</label>
+            <input name="nomor" type="text" required>
+            <label for="">nomor</label>
+            <input name="tanggal lahir" type="text" required>
+            <button type="submit">kirim</button>
+
+<style>
+    table, th, td {
+        border:4px solid green;
+    }
+</style>
+
+        </form>
+        
+        <hr>
+        <h1>ini daftar makanan anggi</h1>
+        <br>
+        <table>
+            <table style="width:600px">
+
+            <tr>
+                <th>nama</th>
+                <th>umur</th>
+                <th>nomor</th>
+                <th>tanggal lahir</th>
+            </tr>
+            {% for d in context %}
+            <tr>
+                <td>{{loop.index}}</td>
+                <td>{{d[1]}}</td>
+                <td>
+                    <a href="/detail/{{d[0]}}">
+                        <button class="btn btn-info">detail</button>
+                    </a>
+                    <a href="/update/{{d[0]}}">
+                        <button class="btn btn-warning">update</button>
+                    </a>
+                    <a href="/delete/{{d[0]}}">
+                        <button class="btn btn-danger">delete</button>
+                    </a> 
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+            
+    
+    </div>
+ </body>
+</html>
